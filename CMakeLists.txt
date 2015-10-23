@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 2.8)
+make_minimum_required(VERSION 2.8)
 project(DLoopDetector)
 
-option(BUILD_DemoBRIEF  "Build demo application with BRIEF features" OFF)
-option(BUILD_DemoSURF   "Build demo application with SURF features"  OFF)
+option(BUILD_DemoBRIEF  "Build demo application with BRIEF features" ON)
+option(BUILD_DemoSURF   "Build demo application with SURF features"  ON)
 
 set(HDRS
   include/DLoopDetector/DLoopDetector.h         include/DLoopDetector/TemplatedLoopDetector.h)
@@ -29,7 +29,7 @@ if(BUILD_DemoBRIEF OR BUILD_DemoSURF)
     if(NOT EXISTS ${RESOURCE_FILE})
       file(DOWNLOAD http://doriangalvez.com/resources/DLoopDetector/resources.tar.gz 
         ${RESOURCE_FILE} STATUS status SHOW_PROGRESS EXPECTED_MD5 c001da68ddaceed1de9c16aaac22ed80)
-      if(${status})
+      if(${status==0})
         message(FATAL_ERROR "Error downloading resources for demo applications")
       endif(${status})
     endif(NOT EXISTS ${RESOURCE_FILE})
