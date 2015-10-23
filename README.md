@@ -41,3 +41,11 @@ You can run either demo_surf or demo_brief. When the demo is running, you should
 ![Loop detector](http://dorian3d.github.com/other/images/dloop.png)
 
 The main functionality of the demo is written in the `demoDetector.h` class. Check it to see how to change the parameters of the loop detector.
+
+Changes on CMakeLists.txt
+
+option(BUILD_DemoBRIEF  "Build demo application with BRIEF features" ON)
+option(BUILD_DemoSURF   "Build demo application with SURF features"  ON)
+
+Line32
+    if(${status==0})
